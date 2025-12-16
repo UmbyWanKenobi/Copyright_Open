@@ -1,0 +1,15 @@
+Il protocollo OpenTimestamps (OTS) è uno standard open-source per creare prove crittografiche di esistenza di dati (timestamp) in modo decentralizzato, scalabile e gratuito, ancorandole principalmente alla blockchain di Bitcoin. Sviluppato da Peter Todd a partire dal 2016, permette di dimostrare che un certo dato (es. un documento, un articolo o un hash) esisteva prima di una specifica data, senza dipendere da autorità centrali o rivelare il contenuto originale.Come funziona passo per passo
+1. Calcolo dell'hash: Si parte dal dato da certificare (es. un file o il contenuto di un articolo). Viene calcolato il suo hash crittografico (tipicamente SHA-256). Solo questo hash viene usato: il contenuto originale rimane privato e non lascia mai il tuo dispositivo.
+2. Invio a un calendar server: L'hash viene inviato a uno o più "calendar" pubblici (server decentralizzati come finney.calendar.eternitywall.com, btc.calendar.opentimestamps.org, ecc.). Il calendar aggiunge il tuo hash a un albero di Merkle (Merkle Tree) che aggrega migliaia di hash ricevuti da utenti diversi.
+3. Creazione della Merkle Root: Periodicamente, il calendar calcola la radice Merkle dell'albero (un singolo hash che rappresenta tutti gli hash aggregati).
+4. Ancoraggio su Bitcoin: La Merkle Root viene inserita in una transazione Bitcoin (solitamente tramite OP_RETURN). Una volta confermata in un blocco, la transazione fornisce una data immutabile e pubblica.
+5. Ricezione della prova: Il calendar restituisce una prova OpenTimestamps (file .ots): un percorso crittografico di operazioni (hash, append/prepend) che collega il tuo hash originale alla Merkle Root ancorata su Bitcoin. Questa prova è compatta e verificabile offline.
+6. Upgrade e verifica: Inizialmente la prova è "pending" (in attesa di conferma). Con il comando ots upgrade si completa con l'attestazione finale. Per verificare: ots verify file.ots controlla che il percorso porti a un blocco Bitcoin valido.
+
+Vantaggi principali
+Scalabilità e costo zero — Grazie ai Merkle Tree, milioni di timestamp condividono poche transazioni Bitcoin (i calendar coprono i costi tramite donazioni).
+Privacy — Solo l'hash è inviato; il contenuto rimane segreto.
+Decentralizzazione — Nessun ente centrale; chiunque può verificare usando la blockchain pubblica o un nodo Bitcoin.
+Indipendenza e longevità — Le prove .ots sono verificabili per decenni, anche offline (con header di blocco noti).
+Flessibilità — Il protocollo è blockchain-agnostico (supporta Bitcoin ora, potenzialmente altre in futuro).
+OpenTimestamps è usato in ambiti come ricerca scientifica (priorità su scoperte), protezione IP, giornalismo e archiviazione digitale. Il client ufficiale (in Python, Java, ecc.) è disponibile su https://opentimestamps.org.
