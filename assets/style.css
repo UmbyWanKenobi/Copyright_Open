@@ -1,0 +1,174 @@
+/* Stili badge frontend */
+.co-badge {
+  margin: 2rem auto;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1f2937;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+}
+
+.co-badge .co-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.co-badge .co-icon {
+  margin-right: 10px;
+  color: #10b981;
+  stroke-width: 2.5;
+}
+
+.co-badge .co-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #111827;
+}
+
+.co-badge .co-content {
+  padding-left: 30px;
+}
+
+.co-badge .co-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.co-badge .co-label {
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.co-badge .co-download {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 3px 6px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.co-badge .co-download:hover {
+  background-color: #eff6ff;
+  text-decoration: underline;
+}
+
+.co-badge .co-date {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.co-badge .co-provider {
+  color: #374151;
+  font-style: italic;
+  font-size: 13px;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.co-badge .co-verify {
+  color: #4b5563;
+  margin: 10px 0;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+  font-size: 13.5px;
+}
+
+.co-badge .co-details {
+  margin-top: 12px;
+}
+
+.co-badge .co-summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #374151;
+  padding: 6px 10px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+.co-badge .co-summary:hover {
+  background-color: #e5e7eb;
+}
+
+.co-badge .co-tech {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.co-badge .co-tech div {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.co-badge .co-tech strong {
+  min-width: 120px;
+  color: #4b5563;
+}
+
+.co-badge .co-hash {
+  font-family: 'Courier New', monospace;
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: help;
+}
+
+.co-badge .co-tech a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.co-badge .co-tech a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .co-badge {
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .co-badge .co-content {
+    padding-left: 0;
+  }
+  
+  .co-badge .co-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .co-badge .co-tech div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
