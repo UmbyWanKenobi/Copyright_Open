@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Copyright_Open
- * Plugin URI: https://esempio.com/copyright-open
+ * Plugin URI: https://github.com/UmbyWanKenobi/Copyright_Open.git
  * Description: Certifica automaticamente post/pagine su OpenTimestamps (Bitcoin). Aggiunge badge con certificato .ots, istruzioni di verifica e supporta cronologia o sovrascrittura dei certificati.
  * Version: 2.0.0
  * Author: Umberto Genovese
@@ -439,4 +439,5 @@ register_activation_hook(__FILE__, ['Copyright_Open_Plugin', 'activate']);
 register_deactivation_hook(__FILE__, ['Copyright_Open_Plugin', 'deactivate']);
 
 // Inizializza plugin
+
 Copyright_Open_Plugin::init();
